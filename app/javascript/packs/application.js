@@ -17,3 +17,6 @@ import "@themesberg/volt-bootstrap-5-dashboard/src/assets/js/volt";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")
