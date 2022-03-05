@@ -1,0 +1,34 @@
+pt-BR:
+  activerecord:
+    models:
+      admin:
+        one: Administrador
+        other: Administradores
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      admin:
+        name: Nome
+        email: E-mail
+        password: Senha
+        created_at: Criado em
+        updated_at: Atualizado em
+      user:
+        name: Nome
+        email: E-mail
+        status: Status
+        profile: Perfil
+        password: Senha
+        created_at: Criado em
+        updated_at: Atualizado em
+    enumerize:
+      user:
+        status:
+          active: Ativo
+          inactive: Inativo
+          suspended: Suspenso
+        profile:
+          otaku: Otaku
+          admin: Administrativo
+

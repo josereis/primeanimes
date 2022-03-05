@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'simple_form', '~> 5.1'
 gem 'pundit', '~> 2.2'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'enumerize', '~> 2.5'
+gem 'has_scope', '~> 0.8.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
