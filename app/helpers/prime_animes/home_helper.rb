@@ -1,0 +1,2 @@
+module PrimeAnimes::HomeHelper
+end

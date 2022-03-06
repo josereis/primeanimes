@@ -58,15 +58,15 @@ pt-BR:
       unconfirmed: "Você precisa confirmar seu endereço de e-mail antes de continuar."
     mailer:
       confirmation_instructions:
-        subject: "[AnimeList] Instruções de confirmação"
+        subject: "[PrimeAnimes] Instruções de confirmação"
       reset_password_instructions:
-        subject: "[AnimeList] Intruções para redefinição de senha"
+        subject: "[PrimeAnimes] Intruções para redefinição de senha"
       unlock_instructions:
-        subject: "[AnimeList] Instruções de desbloqueio"
+        subject: "[PrimeAnimes] Instruções de desbloqueio"
       email_changed:
-        subject: "[AnimeList] E-mail alterado"
+        subject: "[PrimeAnimes] E-mail alterado"
       password_change:
-        subject: "[AnimeList] Senha alterada"
+        subject: "[PrimeAnimes] Senha alterada"
     omniauth_callbacks:
       failure: Não foi possível autorizar de uma conta de %{kind} porque "%{reason}".
       success: Autorizado com sucesso de uma conta de %{kind}.
