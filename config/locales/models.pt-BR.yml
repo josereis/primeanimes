@@ -7,6 +7,15 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      anime:
+        one: Anime
+        other: Animes
+      season:
+        one: Temporada
+        other: Temporadas
+      episode:
+        one: Episódio
+        other: Episódios
     attributes:
       admin:
         name: Nome
@@ -20,8 +29,24 @@ pt-BR:
         status: Status
         profile: Perfil
         password: Senha
-        created_at: Criado em
-        updated_at: Atualizado em
+      anime:
+        photo: Capa do Anime
+        title: Título
+        status: Status
+        synopsis: Snopse
+        ranking: Classificação
+        release_date: Lançado em
+        finish_date: Encerrado em
+        removal_date: Removido em
+      season:
+        number: Nº da Temporada
+        description: Resumo
+        release_date: Lançado em
+        finish_date: Encerrado em
+      episode:
+        number: Nº do Episódio
+        title: Título
+        release_date: Lançado em
     enumerize:
       user:
         status:
@@ -31,4 +56,8 @@ pt-BR:
         profile:
           otaku: Otaku
           admin: Administrativo
-
+      anime:
+        status:
+          in_progress: Em andamento
+          stopped: Pausado
+          complete: Finaliado

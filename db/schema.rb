@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_214111) do
+ActiveRecord::Schema.define(version: 2022_03_05_222752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,38 @@ ActiveRecord::Schema.define(version: 2022_03_05_214111) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "animes", force: :cascade do |t|
+    t.string "title"
+    t.string "status"
+    t.decimal "ranking"
+    t.date "release_date"
+    t.date "finish_date"
+    t.boolean "removed", default: false
+    t.datetime "removal_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.integer "number"
+    t.string "title"
+    t.date "release_date"
+    t.bigint "season_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["season_id"], name: "index_episodes_on_season_id"
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.integer "number"
+    t.date "release_date"
+    t.date "finish_date"
+    t.bigint "anime_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["anime_id"], name: "index_seasons_on_anime_id"
   end
 
   create_table "users", force: :cascade do |t|

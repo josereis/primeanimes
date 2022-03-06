@@ -1,3 +1,4 @@
+require 'active_storage_validations/matchers'
 require 'simplecov'
 SimpleCov.start do
   add_group 'Config', 'config'
