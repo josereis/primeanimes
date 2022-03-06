@@ -33,6 +33,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'enumerize', '~> 2.5'
 gem 'has_scope', '~> 0.8.0'
 gem 'active_storage_validations'
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
