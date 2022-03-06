@@ -2,7 +2,7 @@
   <div class="signin-inner my-3 my-lg-0 bg-white shadow border-0 rounded p-4 p-lg-5 w-100 fmxw-500">
     <h1 class="h3">Reenviar instruções de confirmação</h1>
 
-    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: user_confirmation_path, html: { method: :post }) do |f| %>
       <%#= f.error_notification %>
       <%#= f.full_error :confirmation_token %>
 

@@ -7,8 +7,11 @@ module ApplicationHelper
         if user.instance_of?(Admin)
             image_pack_tag("avatar/default_avatar.jpg", class: "card-img-top rounded-circle border-white", alt: "#{user.name}")
         else
-            # Model => User
-            image_pack_tag("avatar/default_avatar.jpg", class: "card-img-top rounded-circle border-white", alt: "#{user.name}")
+            if user.avatar.attached?
+                image_tag(user.avatar, size: "50x50", class: "card-img-top rounded-circle border-white", alt: "#{user.name}")
+            else
+                image_pack_tag("avatar/default_avatar.jpg", class: "card-img-top rounded-circle border-white", alt: "#{user.name}")
+            end
         end
     end
 

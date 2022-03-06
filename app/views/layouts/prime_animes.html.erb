@@ -1,0 +1,15 @@
+<% content_for :content do %>
+    <%= render "layouts/shared/nav", path: prime_animes_root_path %>
+    <%= render partial: "layouts/shared/sidenav", locals: {user_logged: current_user, logout_path: destroy_user_session_path} %>
+    
+    <main class="content min-vh-100">
+        <%= render partial: "layouts/shared/topbar", locals: {user_logged: current_user, logout_path: destroy_user_session_path} %>
+        <%= render "layouts/shared/alerts" %>
+        
+        <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
+    
+    <%= yield :javascript %>
+<% end %>
+
+<%= render template: "layouts/application" %>
