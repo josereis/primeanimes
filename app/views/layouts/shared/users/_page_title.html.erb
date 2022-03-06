@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    <div>
+        <h2 class="h4">Usuários</h2>
+    </div>
+
+    <%= render "layouts/shared/button_link/button_new", url_path: new_sas_animes_user_path if policy(User).new? %>
+    
+    <%= render "layouts/shared/users/filter", url_path: url_path %>
+</div>

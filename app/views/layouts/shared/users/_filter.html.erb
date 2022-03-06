@@ -1,0 +1,11 @@
+<div class="dropdown ms-lg-3">
+    <a class="nav-link text-dark dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="media d-flex align-items-center">
+            <i class="fa-solid fa-magnifying-glass icon icon-sm text-gray-400"></i>
+        </div>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-lg dashboard-dropdown dropdown-menu-end mt-2 py-1">
+        <%= render "layouts/shared/users/items_filter", url_path: url_path %>
+    </div>
+</div>

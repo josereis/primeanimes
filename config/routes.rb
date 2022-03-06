@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'prime_animes/sessions'}
 
   namespace :sas_animes do
+    resources :users, on: :collection
+    
     root to: 'home#index'
   end
 

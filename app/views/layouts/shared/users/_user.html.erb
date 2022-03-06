@@ -1,0 +1,20 @@
+<% users.each do |user| %>
+<tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.profile %></td>
+    <td><%= user_status_badge(user) %></td>
+    <td><span><%= I18n.l user.created_at, format: "%d de %B" %></span><span class="note"><%= I18n.l user.created_at, format: "%H:%M" %></span></td>
+    <td>
+        <div class="row justify-content-start justify-content-md-end align-items-center">
+            <div class="col-auto">
+                <%= link_to "<i class='fas fa-pen'></i>".html_safe, edit_sas_animes_user_path(user), class: "btn-sm btn-icon-only btn-outline-primary" if policy(user).edit? %>
+            </div>
+            
+            <div class="col-auto">
+                <%= user_status_change_buttons(user) %>
+            </div>
+        </div>
+    </td>
+</tr>
+<% end %>

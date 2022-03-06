@@ -16,4 +16,13 @@
             <span class="mt-1 ms-1 sidebar-text">Dashboard</span>
         <% end %>
     </li>
+
+    <li class="nav-item <%= current_page?(sas_animes_users_path) ? "active" : ""%>">
+        <%= link_to sas_animes_users_path, class: "nav-link d-flex align-items-center" do -%>
+            <span class="sidebar-icon">
+                <i class="fa-solid fa-users"></i>
+            </span>
+            <span class="mt-1 ms-1 sidebar-text">Usuários</span>
+        <% end %>
+    </li>
 </ul>

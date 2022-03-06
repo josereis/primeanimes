@@ -1,0 +1,52 @@
+<div class="card-body">
+    <h2 class="h5 mb-4 text-center">Filtrar</h2>
+    <%= form_tag(url_path, method: "GET", role: "form", class: "", remote: false) do %>
+        <div class="col-md-12 mb-3">
+            <%= text_field_tag(:with_email, params[:with_email], placeholder: "e-mail", class: "form-control") %>  
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <span class="h6">Perfis:</span>
+                </div>
+                
+                <div class="form-check">
+                    <%= check_box_tag('with_profile[]', :otaku, params[:with_profile]&.include?('otaku'), class: "form-check-input") %>
+                    <label class="form-check-label">Otaku</label>
+                </div>
+
+                <div class="form-check">
+                    <%= check_box_tag('with_profile[]', :admin, params[:with_profile]&.include?('admin'), class: "form-check-input") %>
+                    <label class="form-check-label">Administrador</label>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <span class="h6">Status:</span>
+                </div>
+                
+                <div class="form-check">
+                    <%= check_box_tag('with_status[]', :active, params[:with_status]&.include?('active'), class: "form-check-input") %>
+                    <label class="form-check-label">Ativo</label>
+                </div>
+
+                <div class="form-check">
+                    <%= check_box_tag('with_status[]', :inactive, params[:with_status]&.include?('inactive'), class: "form-check-input") %>
+                    <label class="form-check-label">Inativo</label>
+                </div>
+
+                <% if pundit_user.instance_of?(Admin) %>
+                    <div class="form-check">
+                        <%= check_box_tag('with_status[]', :suspended, params[:with_status]&.include?('suspended'), class: "form-check-input") %>
+                        <label class="form-check-label">Suspenso</label>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        
+        <%= button_tag("Filtrar", class: "btn col-md-12 btn-primary mb-2") %>
+        <%= link_to 'Cancelar', url_path, class: "btn col-md-12 btn-secondary mb-2" %>
+    <% end %>
+</div>

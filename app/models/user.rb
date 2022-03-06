@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   extend Enumerize
+  
+  paginates_per 5
 
   has_one_attached :avatar
   
