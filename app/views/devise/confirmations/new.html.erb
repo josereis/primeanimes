@@ -1,20 +1,21 @@
-<h2>Resend confirmation instructions</h2>
+<div class="col-12 d-flex align-items-center justify-content-center">
+  <div class="signin-inner my-3 my-lg-0 bg-white shadow border-0 rounded p-4 p-lg-5 w-100 fmxw-500">
+    <h1 class="h3">Reenviar instruções de confirmação</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-  <%= f.full_error :confirmation_token %>
+    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%#= f.error_notification %>
+      <%#= f.full_error :confirmation_token %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                input_html: { autocomplete: "email" } %>
+      <div class="col-md-12 mb-4">
+        <%= f.label :email %>
+        <%= f.input :email, required: true, autofocus: true, label: false, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "exemplo@exemplo.com.br", input_html: {class: "form-control"} %>  
+      </div>
+
+      <div class="d-grid">
+        <%= f.button :submit, "Reenviar instruções de confirmação", class: "btn btn-gray-800" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Resend confirmation instructions" %>
-  </div>
-<% end %>
+</div>
 
 <%= render "devise/shared/links" %>

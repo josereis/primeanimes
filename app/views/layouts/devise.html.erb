@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Anime List</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+
+        <!-- Warning !! ensure that "stylesheet_pack_tag" is used, line below -->
+        <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+        <main>
+            <!-- Section -->
+            <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center form-bg-image">
+                        <div class="row justify-content-center">
+                            <%= render "layouts/shared/alerts" %>
+                        </div>
+
+                        <p class="row justify-content-center text-center">
+                            <%= link_to root_path, class: "d-flex align-items-center justify-content-center w-25" do -%>
+                                <i class="fas fa-arrow-circle-left me-2"></i> Retornar
+                            <% end %>
+                        </p>
+
+                        <!-- CONTEUDO PRINCIPAL -->
+                        <%= content_for?(:content) ? yield(:content) : yield %>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%= yield :javascript %>
+    </body>
+</html>
