@@ -1,0 +1,2 @@
+module SasAnimes::HomeHelper
+end

@@ -1,0 +1,19 @@
+<ul class="nav flex-column pt-3 pt-md-0">
+    <li class="nav-item mb-4">
+        <div class="d-flex align-items-center">
+            <span class="sidebar-icon">
+                <%= image_pack_tag "brand/light.svg", height: 20, width: 20, alt: "SAS Anime" %>
+            </span>
+            <span class="mt-1 ms-1 sidebar-text">SAS Anime</span>
+        <div>
+    </li>
+    
+    <li class="nav-item <%= current_page?(sas_animes_root_path) ? "active" : ""%>">
+        <%= link_to sas_animes_root_path, class: "nav-link d-flex align-items-center" do -%>
+            <span class="sidebar-icon">
+                <i class="fas fa-chart-pie"></i>
+            </span>
+            <span class="mt-1 ms-1 sidebar-text">Dashboard</span>
+        <% end %>
+    </li>
+</ul>

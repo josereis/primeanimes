@@ -1,0 +1,19 @@
+<a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <div class="media d-flex align-items-center">
+        <div class="avatar rounded-circle">
+            <%= user_avatar(user_logged) %>
+        </div>
+    </div>
+</a>
+
+<div class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
+    <%= link_to "#", class: "dropdown-item d-flex align-items-center" do -%>
+        <i class="fas fa-user-cog dropdown-icon text-gray-400 me-2"></i> Configurações
+    <% end %>
+
+    <div role="separator" class="dropdown-divider my-1"></div>
+
+    <%= link_to logout_path, class: "dropdown-item d-flex align-items-center", method: :delete do -%>
+        <i class="fas fa-sign-out-alt dropdown-icon text-gray-400 me-2"></i> Sair
+    <% end %>
+</div>
