@@ -40,4 +40,8 @@ class UserPolicy < ApplicationPolicy
     def active_and_inactive?
         user.instance_of?(Admin) || (user.instance_of?(User) && user.admin?)
     end
+
+    def can_see_administration?
+        user.instance_of?(User) && user.admin?
+    end
 end

@@ -10,10 +10,18 @@ module UsersHelper
     end
     
     def user_status_change_buttons(user)
-        if user.active?
-            render partial: "layouts/shared/button_link/button_status", locals: {path_link: inactive_sas_animes_user_url(user), method: :get, button_type: "danger", icone: "fa-user-slash"}
+        if pundit_user.instance_of?(Admin)
+            if user.active?
+                render partial: "layouts/shared/button_link/button_status", locals: {path_link: inactive_sas_animes_user_url(user), method: :get, button_type: "danger", icone: "fa-user-slash"}
+            else
+                render partial: "layouts/shared/button_link/button_status", locals: {path_link: active_sas_animes_user_url(user), method: :get, button_type: "success", icone: "fa-user"}
+            end
         else
-            render partial: "layouts/shared/button_link/button_status", locals: {path_link: active_sas_animes_user_url(user), method: :get, button_type: "success", icone: "fa-user"}
+            if user.active?
+                render partial: "layouts/shared/button_link/button_status", locals: {path_link: inactive_prime_animes_user_url(user), method: :get, button_type: "danger", icone: "fa-user-slash"}
+            else
+                render partial: "layouts/shared/button_link/button_status", locals: {path_link: active_prime_animes_user_url(user), method: :get, button_type: "success", icone: "fa-user"}
+            end
         end
     end
 end
