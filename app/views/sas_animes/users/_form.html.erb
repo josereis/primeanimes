@@ -1,0 +1,48 @@
+<div class="col-12 mb-4">
+    <div class="card border-0 shadow components-section">
+        <div class="container card-body">
+            <%= simple_form_for user, url: url, method: method do |f| %>
+                <%= f.hidden_field :id %>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-6">
+                        <%= f.label :name %>
+                        <%= f.input :name, label: false, required: true  %>
+                    </div>
+                    <div class="col-md-3">
+                        <%= f.label :profile %>
+                        <%= f.input :profile, label: false, required: true %>
+                    </div>
+                    <div class="col-md-3">
+                        <%= f.label :status %>
+                        <%= f.input :status, label: false, required: true %>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-12">
+                        <%= f.label :email, required: true %>
+                        <%= f.input :email, label: false, required: true, disabled: f.object.id.present? %>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between">
+                    <div class="col-md-6">
+                        <%= f.label :password %>
+                        <%= f.input :password, label: false %>
+                    </div>
+                            
+                    <div class="col-md-6">
+                        <%= f.label :password_confirmation %>
+                        <%= f.input :password_confirmation, label: false %>
+                    </div>
+                <div>
+
+                <div class="float-end"> 
+                    <%= f.button :submit, class: "btn btn-primary gap-2" %>
+                    <%= link_to 'Cancelar', sas_animes_users_path, class: "btn btn-secondary gap-2" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
