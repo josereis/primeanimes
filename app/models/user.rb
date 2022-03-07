@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def active_for_authentication?
     super && self.active?
   end
+
+  def send_confirmation_email(temp_password)
+    SasAnimes::UsersMailer.with(user: self, temporary_password: temp_password).confirmation_email.deliver_now! if self.persisted?
+  end
 end

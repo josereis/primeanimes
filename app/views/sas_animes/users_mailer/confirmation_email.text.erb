@@ -1,0 +1,9 @@
+Olá <%= @user.name %>
+Seja bem vindo ao AnimeList!
+
+Seus dados de acesso ao sistema são:
+  email: <%= @user.email %>
+  senha: <%= @temporary_password %>
+
+Porém, antes de acessar o sistema, você deve realizar a confirmação do seu email atraves do link abaixo:
+<%= link_to 'Confirmar minha Conta', confirmation_url(@user, confirmation_token: @user.confirmation_token) %>
