@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   end
 
   namespace :prime_animes do
+    resources :users, only: %i[index show], on: :collection do
+      get "active", on: :member, to: "users#active"
+      get "inactive", on: :member, to: "users#inactive"
+    end
+    
     root to: 'home#index'
   end
 
